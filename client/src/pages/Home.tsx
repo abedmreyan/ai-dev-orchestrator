@@ -29,7 +29,7 @@ export default function Home() {
               <h1 className="text-xl font-bold">AI Dev Orchestrator</h1>
             </div>
             <Button asChild>
-              <a href={getLoginUrl()}>Sign In</a>
+              <Link href="/projects">Get Started</Link>
             </Button>
           </div>
         </header>
@@ -43,10 +43,10 @@ export default function Home() {
                 Transform your ideas into deployed products with a team of specialized AI agents
               </p>
               <Button size="lg" asChild>
-                <a href={getLoginUrl()}>
+                <Link href="/projects">
                   Get Started
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
+                </Link>
               </Button>
             </div>
 
