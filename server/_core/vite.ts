@@ -8,9 +8,10 @@ export async function setupVite(app: Express, server: Server) {
   // Dynamic import to avoid bundling vite in production  
   const { createServer: createViteServer } = await import("vite");
 
-  // Only import vite.config in development  (avoids bundling devDependencies)
+  // Only import vite.config in development - use dynamic path to prevent bundling
+  const configPath = "../../vite.config";
   const viteConfig = process.env.NODE_ENV === "development"
-    ? await import("../../vite.config")
+    ? await import(configPath)
     : { default: {} };
 
   const serverOptions = {
